@@ -307,7 +307,7 @@
 		};
 		CA8BB24F1F2FE08D00577B5E /* Fabric Script */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (

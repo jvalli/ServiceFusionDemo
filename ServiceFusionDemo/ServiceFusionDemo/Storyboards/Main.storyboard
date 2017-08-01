@@ -167,7 +167,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="buttonPhoto" destination="Ijc-8U-dhf" id="EYA-pF-R8o"/>
+                        <outlet property="buttonPhoto" destination="Ijc-8U-dhf" id="Zvb-nx-q99"/>
                         <outlet property="keyboardHeightConstraint" destination="gj8-TE-tU3" id="1mo-UI-4X7"/>
                         <outlet property="textFieldDateOfBirth" destination="Bej-Rk-FV4" id="b2v-Xn-LZ1"/>
                         <outlet property="textFieldFirstName" destination="ABm-Nj-cEc" id="1JD-8x-gag"/>

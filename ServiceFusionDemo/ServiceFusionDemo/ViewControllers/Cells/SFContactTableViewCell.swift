@@ -28,5 +28,6 @@ class SFContactTableViewCell: UITableViewCell {
         
         imageView?.clipsToBounds = true
         imageView?.layer.cornerRadius = imageSize.height / 2
+        imageView?.setNeedsDisplay()
     }
 }

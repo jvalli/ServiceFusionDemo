@@ -92,7 +92,6 @@ class SFContactViewController: UIViewController {
         textFieldDateOfBirth.text = ""
         textFieldPhoneNumber.text = ""
         textFieldZipCode.text = ""
-        buttonPhoto.setBackgroundImage(UIImage(named: "profile"), for: .normal)
     }
     
     fileprivate func loadScreenValues(withContact contact: SFContact) {
@@ -106,8 +105,6 @@ class SFContactViewController: UIViewController {
         textFieldZipCode.text = contact.zipCode
         if let photoUrl = contact.photoUrl, let image = UIImage.loadImageFromPath(photoUrl), !imageWasChanged {
             buttonPhoto.setBackgroundImage(image, for: .normal)
-        } else {
-            buttonPhoto.setBackgroundImage(UIImage(named: "profile"), for: .normal)
         }
     }
     
@@ -188,7 +185,7 @@ class SFContactViewController: UIViewController {
     
     fileprivate func updateContact() {
         var photoUrl = ""
-        if imageWasChanged, let image = buttonPhoto.backgroundImage(for: .normal), let path = UIImage.saveImageToDocumentDirectory(image, String.randomString(length: imageNameLength)) {
+        if imageWasChanged, let image = buttonPhoto.backgroundImage(for: .normal), let path = UIImage.saveImageToDocumentDirectory(image, String.randomString(length: imageNameLength).appending(".jpg")) {
             if contactController?.getSelectedContact()?.photoUrl != nil {
                 UIImage.deleteImageFromPath(contactController!.getSelectedContact()!.photoUrl!)
             }
@@ -208,7 +205,7 @@ class SFContactViewController: UIViewController {
     
     fileprivate func createContact() {
         var photoUrl = ""
-        if let image = buttonPhoto.backgroundImage(for: .normal), let path = UIImage.saveImageToDocumentDirectory(image, String.randomString(length: imageNameLength)) {
+        if let image = buttonPhoto.backgroundImage(for: .normal), let path = UIImage.saveImageToDocumentDirectory(image, String.randomString(length: imageNameLength).appending(".jpg")) {
             photoUrl = path
         }
         contactController?.createNewContact(firstName: textFieldFirstName.text!, lastName: textFieldLastName.text!, dateOfBirth: textFieldDateOfBirth.text!, phoneNumber: textFieldPhoneNumber.text!, zipCode: textFieldZipCode.text!, photoUrl: photoUrl, handler: { success, errors in
@@ -266,11 +263,14 @@ extension SFContactViewController: UITextFieldDelegate {
 extension SFContactViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.imageWasChanged = true
-            self.buttonPhoto.setBackgroundImage(image, for: .normal)
-            self.view.layoutIfNeeded()
+        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+            imageWasChanged = true
+            buttonPhoto.setBackgroundImage(editedImage, for: .normal)
+        } else if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageWasChanged = true
+            buttonPhoto.setBackgroundImage(image, for: .normal)
         }
+        buttonPhoto.setNeedsDisplay()
         dismiss(animated: true, completion: nil)
     }
     
