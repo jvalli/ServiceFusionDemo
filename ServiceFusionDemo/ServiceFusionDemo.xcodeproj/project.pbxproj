@@ -1,0 +1,518 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		775AF121B9ABE6D4E13501C6 /* Pods_ServiceFusionDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED2CA6A15CDFE89E2414FBD /* Pods_ServiceFusionDemo.framework */; };
+		CA7149401F30897D0072F8AB /* SFString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA71493F1F30897D0072F8AB /* SFString.swift */; };
+		CA7149421F308AE90072F8AB /* SFDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7149411F308AE90072F8AB /* SFDate.swift */; };
+		CA7149441F309B990072F8AB /* SFAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7149431F309B990072F8AB /* SFAlertView.swift */; };
+		CA8BB24C1F2FC73200577B5E /* SFContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8BB24B1F2FC73200577B5E /* SFContactTableViewCell.swift */; };
+		CA8BB24E1F2FCBC600577B5E /* SFContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8BB24D1F2FCBC600577B5E /* SFContactViewController.swift */; };
+		CA91330D1F2F93CD00FAC880 /* SFAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9133041F2F93CD00FAC880 /* SFAppDelegate.swift */; };
+		CA91330E1F2F93CD00FAC880 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA9133051F2F93CD00FAC880 /* Assets.xcassets */; };
+		CA91330F1F2F93CD00FAC880 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9133071F2F93CD00FAC880 /* LaunchScreen.storyboard */; };
+		CA9133101F2F93CD00FAC880 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9133081F2F93CD00FAC880 /* Main.storyboard */; };
+		CA9133121F2F93CD00FAC880 /* SFHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA91330C1F2F93CD00FAC880 /* SFHomeViewController.swift */; };
+		CA9133151F2F94B100FAC880 /* SFContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9133141F2F94B100FAC880 /* SFContactController.swift */; };
+		CA91331C1F2F999700FAC880 /* SFDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA91331A1F2F999700FAC880 /* SFDataModel.xcdatamodeld */; };
+		CA9133201F2F9A3100FAC880 /* SFContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA91331E1F2F9A3100FAC880 /* SFContact.swift */; };
+		CA9133231F2F9BAA00FAC880 /* SFCoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9133221F2F9BAA00FAC880 /* SFCoreDataHelper.swift */; };
+		CA9133251F2FA1B400FAC880 /* SFConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9133241F2FA1B400FAC880 /* SFConstants.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1830245AE269887AED6FB9B4 /* Pods-ServiceFusionDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceFusionDemo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ServiceFusionDemo/Pods-ServiceFusionDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		353BFF7A676FFD3BA60CBEFE /* Pods-ServiceFusionDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServiceFusionDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ServiceFusionDemo/Pods-ServiceFusionDemo.release.xcconfig"; sourceTree = "<group>"; };
+		CA71493F1F30897D0072F8AB /* SFString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFString.swift; path = Extensions/SFString.swift; sourceTree = "<group>"; };
+		CA7149411F308AE90072F8AB /* SFDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFDate.swift; path = Extensions/SFDate.swift; sourceTree = "<group>"; };
+		CA7149431F309B990072F8AB /* SFAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFAlertView.swift; path = Utils/SFAlertView.swift; sourceTree = "<group>"; };
+		CA8BB24B1F2FC73200577B5E /* SFContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFContactTableViewCell.swift; path = Cells/SFContactTableViewCell.swift; sourceTree = "<group>"; };
+		CA8BB24D1F2FCBC600577B5E /* SFContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFContactViewController.swift; sourceTree = "<group>"; };
+		CA9132EE1F2F934B00FAC880 /* ServiceFusionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ServiceFusionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA9133041F2F93CD00FAC880 /* SFAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFAppDelegate.swift; sourceTree = "<group>"; };
+		CA9133051F2F93CD00FAC880 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CA9133071F2F93CD00FAC880 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CA9133081F2F93CD00FAC880 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CA91330A1F2F93CD00FAC880 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA91330C1F2F93CD00FAC880 /* SFHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFHomeViewController.swift; sourceTree = "<group>"; };
+		CA9133141F2F94B100FAC880 /* SFContactController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFContactController.swift; path = Controllers/SFContactController.swift; sourceTree = "<group>"; };
+		CA91331B1F2F999700FAC880 /* SFDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SFDataModel.xcdatamodel; sourceTree = "<group>"; };
+		CA91331E1F2F9A3100FAC880 /* SFContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFContact.swift; path = Models/SFContact.swift; sourceTree = "<group>"; };
+		CA9133221F2F9BAA00FAC880 /* SFCoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFCoreDataHelper.swift; path = Utils/SFCoreDataHelper.swift; sourceTree = "<group>"; };
+		CA9133241F2FA1B400FAC880 /* SFConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFConstants.swift; path = Utils/SFConstants.swift; sourceTree = "<group>"; };
+		DED2CA6A15CDFE89E2414FBD /* Pods_ServiceFusionDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServiceFusionDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA9132EB1F2F934B00FAC880 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				775AF121B9ABE6D4E13501C6 /* Pods_ServiceFusionDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18EB1DA52242CE7815604501 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1830245AE269887AED6FB9B4 /* Pods-ServiceFusionDemo.debug.xcconfig */,
+				353BFF7A676FFD3BA60CBEFE /* Pods-ServiceFusionDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		75DDCB3731387EEC17F3EFE1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DED2CA6A15CDFE89E2414FBD /* Pods_ServiceFusionDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA71493E1F3088CA0072F8AB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CA71493F1F30897D0072F8AB /* SFString.swift */,
+				CA7149411F308AE90072F8AB /* SFDate.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		CA8BB24A1F2FC70500577B5E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CA8BB24B1F2FC73200577B5E /* SFContactTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		CA9132E51F2F934B00FAC880 = {
+			isa = PBXGroup;
+			children = (
+				CA9132F01F2F934B00FAC880 /* ServiceFusionDemo */,
+				CA9132EF1F2F934B00FAC880 /* Products */,
+				18EB1DA52242CE7815604501 /* Pods */,
+				75DDCB3731387EEC17F3EFE1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CA9132EF1F2F934B00FAC880 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA9132EE1F2F934B00FAC880 /* ServiceFusionDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA9132F01F2F934B00FAC880 /* ServiceFusionDemo */ = {
+			isa = PBXGroup;
+			children = (
+				CA9133031F2F93CD00FAC880 /* AppDelegate */,
+				CA9133051F2F93CD00FAC880 /* Assets.xcassets */,
+				CA9133131F2F949400FAC880 /* Controllers */,
+				CA9133191F2F996800FAC880 /* CoreData */,
+				CA71493E1F3088CA0072F8AB /* Extensions */,
+				CA9133161F2F94FB00FAC880 /* Models */,
+				CA9133061F2F93CD00FAC880 /* Storyboards */,
+				CA9133091F2F93CD00FAC880 /* SupportingFiles */,
+				CA9133211F2F9B7D00FAC880 /* Utils */,
+				CA91330B1F2F93CD00FAC880 /* ViewControllers */,
+			);
+			path = ServiceFusionDemo;
+			sourceTree = "<group>";
+		};
+		CA9133031F2F93CD00FAC880 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				CA9133041F2F93CD00FAC880 /* SFAppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		CA9133061F2F93CD00FAC880 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CA9133071F2F93CD00FAC880 /* LaunchScreen.storyboard */,
+				CA9133081F2F93CD00FAC880 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CA9133091F2F93CD00FAC880 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CA91330A1F2F93CD00FAC880 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		CA91330B1F2F93CD00FAC880 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CA8BB24A1F2FC70500577B5E /* Cells */,
+				CA91330C1F2F93CD00FAC880 /* SFHomeViewController.swift */,
+				CA8BB24D1F2FCBC600577B5E /* SFContactViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CA9133131F2F949400FAC880 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CA9133141F2F94B100FAC880 /* SFContactController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		CA9133161F2F94FB00FAC880 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CA91331E1F2F9A3100FAC880 /* SFContact.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CA9133191F2F996800FAC880 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CA91331A1F2F999700FAC880 /* SFDataModel.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		CA9133211F2F9B7D00FAC880 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CA9133241F2FA1B400FAC880 /* SFConstants.swift */,
+				CA9133221F2F9BAA00FAC880 /* SFCoreDataHelper.swift */,
+				CA7149431F309B990072F8AB /* SFAlertView.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CA9132ED1F2F934B00FAC880 /* ServiceFusionDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA9133001F2F934B00FAC880 /* Build configuration list for PBXNativeTarget "ServiceFusionDemo" */;
+			buildPhases = (
+				9DBB61CC6CC3D3BBE85C0C20 /* [CP] Check Pods Manifest.lock */,
+				CA9132EA1F2F934B00FAC880 /* Sources */,
+				CA9132EB1F2F934B00FAC880 /* Frameworks */,
+				CA9132EC1F2F934B00FAC880 /* Resources */,
+				5260F3C2FB45DB5A0A84768C /* [CP] Embed Pods Frameworks */,
+				F79D82493D9421D2D890B9BA /* [CP] Copy Pods Resources */,
+				CA8BB24F1F2FE08D00577B5E /* Fabric Script */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ServiceFusionDemo;
+			productName = ServiceFusionDemo;
+			productReference = CA9132EE1F2F934B00FAC880 /* ServiceFusionDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA9132E61F2F934B00FAC880 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SF;
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Service Fusion";
+				TargetAttributes = {
+					CA9132ED1F2F934B00FAC880 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = B27972CSZ6;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = CA9132E91F2F934B00FAC880 /* Build configuration list for PBXProject "ServiceFusionDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CA9132E51F2F934B00FAC880;
+			productRefGroup = CA9132EF1F2F934B00FAC880 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA9132ED1F2F934B00FAC880 /* ServiceFusionDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA9132EC1F2F934B00FAC880 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA9133101F2F93CD00FAC880 /* Main.storyboard in Resources */,
+				CA91330E1F2F93CD00FAC880 /* Assets.xcassets in Resources */,
+				CA91330F1F2F93CD00FAC880 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5260F3C2FB45DB5A0A84768C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ServiceFusionDemo/Pods-ServiceFusionDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DBB61CC6CC3D3BBE85C0C20 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CA8BB24F1F2FE08D00577B5E /* Fabric Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Fabric Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" b22a9f54231093ff066e91e9fe9c0d98884ea6d8 af188326183717bc32e090ba58f8ad34fbeab30f509f40a8d5720298918736fd";
+		};
+		F79D82493D9421D2D890B9BA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ServiceFusionDemo/Pods-ServiceFusionDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA9132EA1F2F934B00FAC880 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA9133151F2F94B100FAC880 /* SFContactController.swift in Sources */,
+				CA7149401F30897D0072F8AB /* SFString.swift in Sources */,
+				CA91331C1F2F999700FAC880 /* SFDataModel.xcdatamodeld in Sources */,
+				CA8BB24E1F2FCBC600577B5E /* SFContactViewController.swift in Sources */,
+				CA9133251F2FA1B400FAC880 /* SFConstants.swift in Sources */,
+				CA9133121F2F93CD00FAC880 /* SFHomeViewController.swift in Sources */,
+				CA9133201F2F9A3100FAC880 /* SFContact.swift in Sources */,
+				CA91330D1F2F93CD00FAC880 /* SFAppDelegate.swift in Sources */,
+				CA7149441F309B990072F8AB /* SFAlertView.swift in Sources */,
+				CA7149421F308AE90072F8AB /* SFDate.swift in Sources */,
+				CA9133231F2F9BAA00FAC880 /* SFCoreDataHelper.swift in Sources */,
+				CA8BB24C1F2FC73200577B5E /* SFContactTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CA9132FE1F2F934B00FAC880 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CA9132FF1F2F934B00FAC880 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CA9133011F2F934B00FAC880 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1830245AE269887AED6FB9B4 /* Pods-ServiceFusionDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B27972CSZ6;
+				INFOPLIST_FILE = ServiceFusionDemo/SupportingFiles/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.servicefusion.ServiceFusionDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		CA9133021F2F934B00FAC880 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 353BFF7A676FFD3BA60CBEFE /* Pods-ServiceFusionDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B27972CSZ6;
+				INFOPLIST_FILE = ServiceFusionDemo/SupportingFiles/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.servicefusion.ServiceFusionDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA9132E91F2F934B00FAC880 /* Build configuration list for PBXProject "ServiceFusionDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA9132FE1F2F934B00FAC880 /* Debug */,
+				CA9132FF1F2F934B00FAC880 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA9133001F2F934B00FAC880 /* Build configuration list for PBXNativeTarget "ServiceFusionDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA9133011F2F934B00FAC880 /* Debug */,
+				CA9133021F2F934B00FAC880 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CA91331A1F2F999700FAC880 /* SFDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CA91331B1F2F999700FAC880 /* SFDataModel.xcdatamodel */,
+			);
+			currentVersion = CA91331B1F2F999700FAC880 /* SFDataModel.xcdatamodel */;
+			name = SFDataModel.xcdatamodeld;
+			path = CoreData/SFDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CA9132E61F2F934B00FAC880 /* Project object */;
+}
