@@ -17,18 +17,16 @@ class SFContactTableViewCell: UITableViewCell {
             textLabel?.text = "\(firstName) \(lastName)"
         }
         if let photoUrl = contact.photoUrl, let image = UIImage.loadImageFromPath(photoUrl) {
-            imageView?.image = image
+            imageView?.image = image.resizedImage(newSize: imageSize)
         } else {
-            imageView?.image = UIImage(named: "profile")
+            imageView?.image = UIImage(named: "profile")?.resizedImage(newSize: imageSize)
         }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        imageView?.bounds.size = imageSize
         imageView?.clipsToBounds = true
         imageView?.layer.cornerRadius = imageSize.height / 2
-        imageView?.contentMode = .scaleAspectFill
     }
 }

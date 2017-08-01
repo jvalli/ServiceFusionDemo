@@ -92,6 +92,7 @@ class SFContactViewController: UIViewController {
         textFieldDateOfBirth.text = ""
         textFieldPhoneNumber.text = ""
         textFieldZipCode.text = ""
+        buttonPhoto.setBackgroundImage(UIImage(named: "profile"), for: .normal)
     }
     
     fileprivate func loadScreenValues(withContact contact: SFContact) {
@@ -105,6 +106,8 @@ class SFContactViewController: UIViewController {
         textFieldZipCode.text = contact.zipCode
         if let photoUrl = contact.photoUrl, let image = UIImage.loadImageFromPath(photoUrl), !imageWasChanged {
             buttonPhoto.setBackgroundImage(image, for: .normal)
+        } else {
+            buttonPhoto.setBackgroundImage(UIImage(named: "profile"), for: .normal)
         }
     }
     
@@ -244,7 +247,6 @@ class SFContactViewController: UIViewController {
     }
     
     @IBAction func onClickButtonSave() {
-        
         if contactController?.getSelectedContact() != nil {
             updateContact()
         } else {
