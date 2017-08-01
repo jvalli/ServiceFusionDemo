@@ -10,9 +10,25 @@ import UIKit
 
 class SFContactTableViewCell: UITableViewCell {
     
+    fileprivate let imageSize = CGSize(width: 40, height: 40)
+    
     public func configureCell(withContact contact: SFContact) {
         if let firstName = contact.firstName, let lastName = contact.lastName {
             textLabel?.text = "\(firstName) \(lastName)"
         }
+        if let photoUrl = contact.photoUrl, let image = UIImage.loadImageFromPath(photoUrl) {
+            imageView?.image = image
+        } else {
+            imageView?.image = UIImage(named: "profile")
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        imageView?.bounds.size = imageSize
+        imageView?.clipsToBounds = true
+        imageView?.layer.cornerRadius = imageSize.height / 2
+        imageView?.contentMode = .scaleAspectFill
     }
 }

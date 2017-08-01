@@ -21,4 +21,13 @@ class SFAlertView {
     static func displayErrorAlert(message: String, sender: AnyObject) {
         SFAlertView.displaySingleAlert(title: "Error!", message: message, sender: sender)
     }
+    
+    static func displayConfirmAlert(message: String, sender: AnyObject, handlerOK: ((UIAlertAction) -> Swift.Void)?) {
+        let alertController = UIAlertController(title: "Confirm", message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: handlerOK))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        if let viewController = sender as? UIViewController {
+            viewController.present(alertController, animated: true, completion: nil)
+        }
+    }
 }

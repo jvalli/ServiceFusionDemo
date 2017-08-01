@@ -10,6 +10,9 @@ import UIKit
 import CoreData
 
 class SFHomeViewController: UITableViewController {
+    
+    
+    let searchController = UISearchController(searchResultsController: nil)
 
     // MARK: - # Variables
     
@@ -21,12 +24,26 @@ class SFHomeViewController: UITableViewController {
         super.viewDidLoad()
         
         contactController = SFContactController(withFetchedResultsControllerDelegate: self)
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        definesPresentationContext = true
+        searchController.searchBar.barTintColor = navigationController?.navigationBar.barTintColor
+        tableView.tableHeaderView = searchController.searchBar
+        UIBarButtonItem.appearance(whenContainedInInstancesOf:[UISearchBar.self]).tintColor = UIColor.white
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         tableView.reloadData()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        searchController.isActive = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -84,10 +101,12 @@ class SFHomeViewController: UITableViewController {
             guard let contact = contactController?.getFetchedResultsController().object(at: indexPath) else {
                 fatalError("Attempt to configure cell without a managed object")
             }
-            contactController?.deleteContact(contact, handler: { success in
-                if success {
-                    self.tableView.reloadData()
-                }
+            SFAlertView.displayConfirmAlert(message: "Do you want to delete this contact?", sender: self, handlerOK: { alert in
+                self.contactController?.deleteContact(contact, handler: { success in
+                    if success {
+                        self.tableView.reloadData()
+                    }
+                })
             })
         }
     }
@@ -127,5 +146,17 @@ extension SFHomeViewController: NSFetchedResultsControllerDelegate {
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
+    }
+}
+
+extension SFHomeViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let text = searchController.searchBar.text, text.characters.count > 0 {
+            contactController?.filterFetchedResultsController(withText: text)
+        } else {
+            contactController?.clearFilterFetchedResultsController()
+        }
+        tableView.reloadData()
     }
 }

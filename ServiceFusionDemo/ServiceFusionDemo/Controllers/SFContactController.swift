@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class SFContactController: NSObject {
     
@@ -106,7 +107,9 @@ class SFContactController: NSObject {
         defer {
             handler(success)
         }
-        
+        if contact.photoUrl != nil {
+            UIImage.deleteImageFromPath(contact.photoUrl!)
+        }
         SFCoreDataHelper.shared.getManagedObjectContext().delete(contact)
         do {
             try SFCoreDataHelper.shared.getManagedObjectContext().save()
@@ -150,6 +153,25 @@ class SFContactController: NSObject {
             success = true
         } catch {
             fatalError("Failure to save context: \(error)")
+        }
+    }
+    
+    public func filterFetchedResultsController(withText text: String) {
+        let predicate = NSPredicate(format: "firstName contains[c] %@ || lastName contains[c] %@", text, text)
+        fetchedResultsController.fetchRequest.predicate = predicate
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            fatalError("Failed to initialize FetchedResultsController: \(error)")
+        }
+    }
+    
+    public func clearFilterFetchedResultsController() {
+        fetchedResultsController.fetchRequest.predicate = NSPredicate(value: true)
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            fatalError("Failed to initialize FetchedResultsController: \(error)")
         }
     }
 }

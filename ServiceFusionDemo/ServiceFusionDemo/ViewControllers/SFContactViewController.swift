@@ -183,6 +183,40 @@ class SFContactViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
+    fileprivate func updateContact() {
+        var photoUrl = ""
+        if imageWasChanged, let image = buttonPhoto.backgroundImage(for: .normal), let path = UIImage.saveImageToDocumentDirectory(image, String.randomString(length: imageNameLength)) {
+            if contactController?.getSelectedContact()?.photoUrl != nil {
+                UIImage.deleteImageFromPath(contactController!.getSelectedContact()!.photoUrl!)
+            }
+            photoUrl = path
+        } else if contactController?.getSelectedContact()?.photoUrl != nil {
+            photoUrl = contactController!.getSelectedContact()!.photoUrl!
+        }
+        contactController?.updateSelectedContact(firstName: textFieldFirstName.text!, lastName: textFieldLastName.text!, dateOfBirth: textFieldDateOfBirth.text!, phoneNumber: textFieldPhoneNumber.text!, zipCode: textFieldZipCode.text!, photoUrl: photoUrl, handler: { success, errors in
+            if success {
+                self.contactController?.removeSelectedContact()
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                self.handleContactErrors(errors)
+            }
+        })
+    }
+    
+    fileprivate func createContact() {
+        var photoUrl = ""
+        if let image = buttonPhoto.backgroundImage(for: .normal), let path = UIImage.saveImageToDocumentDirectory(image, String.randomString(length: imageNameLength)) {
+            photoUrl = path
+        }
+        contactController?.createNewContact(firstName: textFieldFirstName.text!, lastName: textFieldLastName.text!, dateOfBirth: textFieldDateOfBirth.text!, phoneNumber: textFieldPhoneNumber.text!, zipCode: textFieldZipCode.text!, photoUrl: photoUrl, handler: { success, errors in
+            if success {
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                self.handleContactErrors(errors)
+            }
+        })
+    }
+    
     // MARK: - # IBActions
     
     @IBAction func onClickButtonPhoto() {
@@ -212,35 +246,9 @@ class SFContactViewController: UIViewController {
     @IBAction func onClickButtonSave() {
         
         if contactController?.getSelectedContact() != nil {
-            var photoUrl = ""
-            if imageWasChanged, let image = buttonPhoto.backgroundImage(for: .normal), let path = UIImage.saveImageToDocumentDirectory(image, String.randomString(length: imageNameLength)) {
-                if contactController?.getSelectedContact()?.photoUrl != nil {
-                    UIImage.deleteImageFromPath(contactController!.getSelectedContact()!.photoUrl!)
-                }
-                photoUrl = path
-            } else if contactController?.getSelectedContact()?.photoUrl != nil {
-                photoUrl = contactController!.getSelectedContact()!.photoUrl!
-            }
-            contactController?.updateSelectedContact(firstName: textFieldFirstName.text!, lastName: textFieldLastName.text!, dateOfBirth: textFieldDateOfBirth.text!, phoneNumber: textFieldPhoneNumber.text!, zipCode: textFieldZipCode.text!, photoUrl: photoUrl, handler: { success, errors in
-                if success {
-                    self.contactController?.removeSelectedContact()
-                    self.navigationController?.popViewController(animated: true)
-                } else {
-                    self.handleContactErrors(errors)
-                }
-            })
+            updateContact()
         } else {
-            var photoUrl = ""
-            if let image = buttonPhoto.backgroundImage(for: .normal), let path = UIImage.saveImageToDocumentDirectory(image, String.randomString(length: imageNameLength)) {
-                photoUrl = path
-            }
-            contactController?.createNewContact(firstName: textFieldFirstName.text!, lastName: textFieldLastName.text!, dateOfBirth: textFieldDateOfBirth.text!, phoneNumber: textFieldPhoneNumber.text!, zipCode: textFieldZipCode.text!, photoUrl: photoUrl, handler: { success, errors in
-                if success {
-                    self.navigationController?.popViewController(animated: true)
-                } else {
-                    self.handleContactErrors(errors)
-                }
-            })
+            createContact()
         }
     }
 }
