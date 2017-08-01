@@ -72,7 +72,7 @@ class SFContactController: NSObject {
         return fetchedResultsController
     }
     
-    public func createNewContact(firstName: String, lastName: String, dateOfBirth: String, phoneNumber: String, zipCode: String, handler: (_ success: Bool, _ errors: [ContactErrorType]) -> ()) {
+    public func createNewContact(firstName: String, lastName: String, dateOfBirth: String, phoneNumber: String, zipCode: String, photoUrl: String, handler: (_ success: Bool, _ errors: [ContactErrorType]) -> ()) {
         
         var success = false
         let errors = validateContact(firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, phoneNumber: phoneNumber, zipCode: zipCode)
@@ -89,6 +89,7 @@ class SFContactController: NSObject {
             contact.dateOfBirth = dateOfBirth.date() as NSDate?
             contact.phoneNumber = phoneNumber
             contact.zipCode = zipCode
+            contact.photoUrl = photoUrl
             
             do {
                 try SFCoreDataHelper.shared.getManagedObjectContext().save()
@@ -127,7 +128,7 @@ class SFContactController: NSObject {
         selectedContact = nil
     }
     
-    public func updateSelectedContact(firstName: String, lastName: String, dateOfBirth: String, phoneNumber: String, zipCode: String, handler: (_ success: Bool, _ errors: [ContactErrorType]) -> ()) {
+    public func updateSelectedContact(firstName: String, lastName: String, dateOfBirth: String, phoneNumber: String, zipCode: String, photoUrl: String, handler: (_ success: Bool, _ errors: [ContactErrorType]) -> ()) {
         
         var success = false
         let errors = validateContact(firstName: firstName, lastName: lastName, dateOfBirth: dateOfBirth, phoneNumber: phoneNumber, zipCode: zipCode)
@@ -144,6 +145,7 @@ class SFContactController: NSObject {
             selectedContact?.dateOfBirth = dateOfBirth.date() as NSDate?
             selectedContact?.phoneNumber = phoneNumber
             selectedContact?.zipCode = zipCode
+            selectedContact?.photoUrl = photoUrl
             try SFCoreDataHelper.shared.getManagedObjectContext().save()
             success = true
         } catch {

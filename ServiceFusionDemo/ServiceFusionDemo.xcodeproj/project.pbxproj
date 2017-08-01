@@ -11,6 +11,7 @@
 		CA7149401F30897D0072F8AB /* SFString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA71493F1F30897D0072F8AB /* SFString.swift */; };
 		CA7149421F308AE90072F8AB /* SFDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7149411F308AE90072F8AB /* SFDate.swift */; };
 		CA7149441F309B990072F8AB /* SFAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7149431F309B990072F8AB /* SFAlertView.swift */; };
+		CA7149461F30B4060072F8AB /* SFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7149451F30B4060072F8AB /* SFImage.swift */; };
 		CA8BB24C1F2FC73200577B5E /* SFContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8BB24B1F2FC73200577B5E /* SFContactTableViewCell.swift */; };
 		CA8BB24E1F2FCBC600577B5E /* SFContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8BB24D1F2FCBC600577B5E /* SFContactViewController.swift */; };
 		CA91330D1F2F93CD00FAC880 /* SFAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9133041F2F93CD00FAC880 /* SFAppDelegate.swift */; };
@@ -31,6 +32,7 @@
 		CA71493F1F30897D0072F8AB /* SFString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFString.swift; path = Extensions/SFString.swift; sourceTree = "<group>"; };
 		CA7149411F308AE90072F8AB /* SFDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFDate.swift; path = Extensions/SFDate.swift; sourceTree = "<group>"; };
 		CA7149431F309B990072F8AB /* SFAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFAlertView.swift; path = Utils/SFAlertView.swift; sourceTree = "<group>"; };
+		CA7149451F30B4060072F8AB /* SFImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFImage.swift; path = Extensions/SFImage.swift; sourceTree = "<group>"; };
 		CA8BB24B1F2FC73200577B5E /* SFContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SFContactTableViewCell.swift; path = Cells/SFContactTableViewCell.swift; sourceTree = "<group>"; };
 		CA8BB24D1F2FCBC600577B5E /* SFContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFContactViewController.swift; sourceTree = "<group>"; };
 		CA9132EE1F2F934B00FAC880 /* ServiceFusionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ServiceFusionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,7 @@
 			children = (
 				CA71493F1F30897D0072F8AB /* SFString.swift */,
 				CA7149411F308AE90072F8AB /* SFDate.swift */,
+				CA7149451F30B4060072F8AB /* SFImage.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				CA91331C1F2F999700FAC880 /* SFDataModel.xcdatamodeld in Sources */,
 				CA8BB24E1F2FCBC600577B5E /* SFContactViewController.swift in Sources */,
 				CA9133251F2FA1B400FAC880 /* SFConstants.swift in Sources */,
+				CA7149461F30B4060072F8AB /* SFImage.swift in Sources */,
 				CA9133121F2F93CD00FAC880 /* SFHomeViewController.swift in Sources */,
 				CA9133201F2F9A3100FAC880 /* SFContact.swift in Sources */,
 				CA91330D1F2F93CD00FAC880 /* SFAppDelegate.swift in Sources */,

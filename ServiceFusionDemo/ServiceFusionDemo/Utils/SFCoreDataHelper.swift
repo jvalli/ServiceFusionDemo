@@ -15,6 +15,8 @@ class SFCoreDataHelper {
     
     fileprivate var managedObjectContext: NSManagedObjectContext
     
+    public var handlerCompletionClosure: (() -> ())?
+    
     // MARK: - # Singleton
     
     open static let shared = SFCoreDataHelper()
@@ -40,6 +42,9 @@ class SFCoreDataHelper {
             let storeURL = docURL.appendingPathComponent("\(SFConstants.CoreData.modelName).sqlite")
             do {
                 try psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL, options: nil)
+                if self.handlerCompletionClosure != nil {
+                    DispatchQueue.main.sync(execute: self.handlerCompletionClosure!)
+                }
             } catch {
                 fatalError("Error migrating store: \(error)")
             }

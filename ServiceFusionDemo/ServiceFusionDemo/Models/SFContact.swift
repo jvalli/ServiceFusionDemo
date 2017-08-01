@@ -17,5 +17,5 @@ class SFContact: NSManagedObject {
     @NSManaged public var dateOfBirth: NSDate?
     @NSManaged public var phoneNumber: String?
     @NSManaged public var zipCode: String?
-
+    @NSManaged public var photoUrl: String?
 }

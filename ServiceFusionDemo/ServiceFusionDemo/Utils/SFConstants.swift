@@ -29,6 +29,7 @@ class SFConstants {
     }
     
     public struct Segues {
+        public static let homeVC = "SFHomeViewController"
         public static let contactVC = "SFContactViewController"
     }
 }

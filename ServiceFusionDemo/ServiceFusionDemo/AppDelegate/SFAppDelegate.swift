@@ -18,6 +18,13 @@ class SFAppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Fabric.with([Crashlytics.self])
+        
+        SFCoreDataHelper.shared.handlerCompletionClosure = {
+            if let splash = self.window?.rootViewController {
+                splash.performSegue(withIdentifier: SFConstants.Segues.homeVC, sender: splash)
+            }
+        }
+        
         return true
     }
 
