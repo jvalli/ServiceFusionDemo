@@ -45,10 +45,6 @@ class SFContactViewController: UIViewController {
         
         configureDateOfBirthPicker()
         configurePhoneNumberToolbar()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
         if let contact = contactController?.getSelectedContact() {
             loadScreenValues(withContact: contact)
